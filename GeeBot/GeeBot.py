@@ -45,19 +45,7 @@ async def on_message(message):
 
 
 @bot.command()
-@commands.has_any_role("Moderators")
-async def plsgiverole(ctx, roles):
-    a = discord.utils.get(ctx.guild.roles, name=roles)
-    await ctx.author.add_roles(a)
-
-@bot.command(description='For when you wanna settle the score some other way')
-async def pick(ctx, *choices: str):
-    """Chooses between multiple choices."""
-    await ctx.send(random.choice(choices))
-
-@bot.command()
 async def add(ctx, left: int, right: int):
-    """Adds two numbers together."""
     await ctx.send(left + right)
 
 if True:
